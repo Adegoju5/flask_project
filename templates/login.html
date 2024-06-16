@@ -1,0 +1,22 @@
+<!-- templates/home.html -->
+{% extends "base.html" %} 
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<div class="form_container">
+    <div class="form">
+        <h3>Log In</h3>
+        <form action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <div class="button_container">
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

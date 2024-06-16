@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+}
+
+.container{
+    background-color:beige;
+}
+
+.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.product{
+    text-decoration: none;
+}
+
+
+.category a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.category a:hover{
+    background-color: #009688;
+
+
+}

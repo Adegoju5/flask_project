@@ -1,0 +1,39 @@
+.outer_container{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.inner_container {
+    background-color: blanchedalmond;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+label {
+    display: block;
+}
+
+h3 {
+    text-align: center;
+}
+
+.inner_container input {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.submit:hover {
+    background-color: #e0e0e0; 
+    cursor: pointer;
+}

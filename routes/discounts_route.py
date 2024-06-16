@@ -4,5 +4,5 @@ from db import db
 
 
 def discounts():
-    filtered_products = Product.query.filter_by(is_discount=True).all()
-    return render_template( 'products.html', filtered_products=filtered_products )
+    discounted_products = Product.query.filter_by(is_discount=True).all()
+    return render_template( 'products.html', discounted_products=discounted_products )

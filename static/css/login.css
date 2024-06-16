@@ -19,6 +19,14 @@
     box-sizing: border-box;
 }
 
+.form img{
+    background-color: brown;
+    display: block;
+    width: 90px;
+    margin-left: 100px;
+
+
+}
 label{
     width: 100%;
 }

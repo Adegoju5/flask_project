@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Home Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
     <nav class="navbar">
@@ -12,7 +12,8 @@
             <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item larger_space"><a href="#">Discount</a></li>
             <li class="nav-item "><a href="{{url_for('categories')}}">Categories</a></li>
-            <li class="nav-item"><a href="#">About Us</a></li>
+            <li class="nav-item "><a href="{{url_for('categories')}}">Account</a></li>
+            <li class="nav-item"><a href="#"> <img src='/static/images/shopping_cart.png' >  </a></li>
         </ul>
     </nav>
     </div>

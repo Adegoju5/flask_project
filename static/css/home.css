@@ -69,6 +69,9 @@ body {
     margin: 0;
 }
 
+.middle_container a {
+    text-decoration: none;
+}
 .order_now{
     width: 15%;
     background-color:chartreuse;

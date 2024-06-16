@@ -1,24 +1,40 @@
-
+/* General styles for the middle container */
 .middle_box {
     height: 250px;
     background-color: aquamarine;
-
 }
 
 .middle_container {
     height: 350px;
     background-color: aquamarine;
     padding-left: 80px;
-    padding-top: 90px; 
-}   
+    padding-top: 90px;
+}
 
 .middle_container h1 {
     margin: 0;
 }
 
-.order_now{
+a {
+    text-decoration: none !important;
+    color: inherit !important; /* Ensures the text color remains the same */
+}
+
+/* Ensure links in the middle container are not underlined */
+.middle_container a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Additional rule to ensure links within .order_now class are not underlined */
+.middle_container .order_now {
+    text-decoration: none !important;
+}
+
+
+.order_now {
     width: 15%;
-    background-color:chartreuse;
+    background-color: chartreuse;
     margin-top: 250px;
     text-align: center;
 }
@@ -32,7 +48,7 @@
     background-color: brown;
 }
 
-.products{
+.products {
     text-align: center;
     background-color: crimson;
 }
@@ -42,13 +58,12 @@
     padding-top: 70px;
     padding-right: 70px;
     padding-bottom: 30px;
-    background-color:darkorange;
-
+    background-color: darkorange;
 }
 
-.get_yours_now{
+.get_yours_now {
     width: 35%;
-    background-color:chartreuse;
+    background-color: chartreuse;
     margin-top: 100px;
     text-align: center;
 }
@@ -59,28 +74,27 @@
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 20px;
-
 }
 
 .bottom_flex {
-    margin: o;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-
+/* Media queries for responsive design */
 @media screen and (max-width: 767px) {
     .middle_container {
         height: 350px;
         background-color: aquamarine;
         padding-left: 35px;
-        padding-top: 60px; 
-    } 
-    
-    .order_now{
+        padding-top: 60px;
+    }
+
+    .order_now {
         width: 35%;
-        background-color:chartreuse;
+        background-color: chartreuse;
         margin-top: 200px;
         text-align: center;
     }
@@ -99,17 +113,15 @@
         padding-top: 40px;
         padding-right: 35px;
         padding-bottom: 40px;
-        background-color:darkorange;
-    
+        background-color: darkorange;
     }
-    .get_yours_now{
+
+    .get_yours_now {
         width: 95%;
     }
 
     .nav-list {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
     }
-
-
 }

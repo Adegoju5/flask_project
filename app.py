@@ -25,15 +25,17 @@ from routes.product_add import add_product
 from routes.categories_route import categories
 from routes.products_route import products
 from routes.about_route import about
+from routes.landing_page_route import landing_page
 
 # Register routes
-app.add_url_rule('/', view_func=home)
+app.add_url_rule('/home', view_func=home)
 app.add_url_rule('/login', view_func=login, methods=['GET', 'POST'])
 app.add_url_rule('/register', view_func=register, methods=['GET', 'POST'])
 app.add_url_rule('/product_add', view_func=add_product, methods=['GET', 'POST'])
 app.add_url_rule('/categories', view_func=categories, methods=['GET', 'POST'])
 app.add_url_rule('/products/<category>', view_func=products, methods=['GET'])
 app.add_url_rule('/about', view_func=about, methods=['GET'])
+app.add_url_rule('/', view_func=landing_page, methods=['GET'])
 
 
 

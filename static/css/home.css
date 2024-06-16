@@ -38,13 +38,14 @@ body {
 .nav-item a:hover {
     background-color: #575757;
 }
-.nav-item img{
+
+.nav-item a img {
     display: block;
     width: 40px;
-    height: 28px;
+    height: 20px;
     padding: 0px 0px;
-
 }
+
 
 .nav-item:last-child {
     padding: 10px 10px; 

@@ -1,4 +1,3 @@
-/* General styles for the middle container */
 .middle_box {
     height: 250px;
     background-color: aquamarine;
@@ -15,22 +14,9 @@
     margin: 0;
 }
 
-a {
-    text-decoration: none !important;
-    color: inherit !important; /* Ensures the text color remains the same */
-}
-
-/* Ensure links in the middle container are not underlined */
-.middle_container a {
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-/* Additional rule to ensure links within .order_now class are not underlined */
 .middle_container .order_now {
     text-decoration: none !important;
 }
-
 
 .order_now {
     width: 15%;

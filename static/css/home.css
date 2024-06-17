@@ -1,80 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(to right, #00c9ff, #92fe9d, #00c9ff);
+/* General reset for all links */
+a {
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
-.top_container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: red;
-    height: 95px;
-
+/* Specific reset for links in middle container */
+.middle_container a {
+    text-decoration: none !important;
+    color: inherit !important;
 }
-.navbar {
-    background-color: #333;
-}
-
-.nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-item {
-    padding: 15px 20px;
-}
-
-.nav-item a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 30px 20px;
-}
-
-.nav-item a:hover {
-    background-color: #575757;
-}
-
-.nav-item a img {
-    display: block;
-    width: 40px;
-    height: 20px;
-    padding: 0px 0px;
-}
-
-
-.nav-item:last-child {
-    padding: 10px 10px; 
-}
-
 
 .middle_box {
     height: 250px;
     background-color: aquamarine;
-
 }
 
 .middle_container {
     height: 350px;
     background-color: aquamarine;
     padding-left: 80px;
-    padding-top: 90px; 
-}   
+    padding-top: 90px;
+}
 
 .middle_container h1 {
     margin: 0;
 }
 
-.middle_container a {
-    text-decoration: none;
-}
-.order_now{
+.order_now {
     width: 15%;
-    background-color:chartreuse;
+    background-color: chartreuse;
     margin-top: 250px;
     text-align: center;
 }
@@ -88,7 +42,7 @@ body {
     background-color: brown;
 }
 
-.products{
+.products {
     text-align: center;
     background-color: crimson;
 }
@@ -98,13 +52,12 @@ body {
     padding-top: 70px;
     padding-right: 70px;
     padding-bottom: 30px;
-    background-color:darkorange;
-
+    background-color: darkorange;
 }
 
-.get_yours_now{
+.get_yours_now {
     width: 35%;
-    background-color:chartreuse;
+    background-color: chartreuse;
     margin-top: 100px;
     text-align: center;
 }
@@ -115,28 +68,27 @@ body {
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 20px;
-
 }
 
 .bottom_flex {
-    margin: o;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-
+/* Media queries for responsive design */
 @media screen and (max-width: 767px) {
     .middle_container {
         height: 350px;
         background-color: aquamarine;
         padding-left: 35px;
-        padding-top: 60px; 
-    } 
-    
-    .order_now{
+        padding-top: 60px;
+    }
+
+    .order_now {
         width: 35%;
-        background-color:chartreuse;
+        background-color: chartreuse;
         margin-top: 200px;
         text-align: center;
     }
@@ -155,17 +107,15 @@ body {
         padding-top: 40px;
         padding-right: 35px;
         padding-bottom: 40px;
-        background-color:darkorange;
-    
+        background-color: darkorange;
     }
-    .get_yours_now{
+
+    .get_yours_now {
         width: 95%;
     }
 
     .nav-list {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
     }
-
-
 }

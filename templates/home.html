@@ -1,47 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Home Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-</head>
-<body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="{{ url_for('landing_page') }}"> <img src='static/images/home.png'> </a></li>
-            <li class="nav-item larger_space"><a href="{{ url_for('discounts') }}">Discounts</a></li>
-            <li class="nav-item "><a href="{{url_for('categories')}}">Categories</a></li>
-            <li class="nav-item "><a href="{{url_for('categories')}}">Account</a></li>
-            <li class="nav-item"><a href="#"> <img src='/static/images/shopping_cart.png' >  </a></li>
-        </ul>
-    </nav>
-    </div>
-    <div class="middle_container">
-        <h1>Limited Time, Maximum Savings</h1>
-        <a href="{{ url_for('discounts') }}" > <h3 class= "order_now" > order now </h3>  </a>
-    </div>
-    <div class= "sales_box"> 
-        <h1 class="products"> Products </h1>
-    </div>
-    <div class= "puma_box" > 
-        <h1> Puma Unisex Running <br> Sneaker </h1>
-        <h3> Push your limits with puma running sneakers. </h3>
-        <h3> Performance and design taken to the edge. </h3>
-        <a> <h3 class= "get_yours_now" > Get yours now </h3>  </a>
-    </div>
-    <div class= "bottom_flex_container">
-        <div class= "bottom_flex">
-            <div class= "features"> 
-                <h3> FREE AND <br> FAST SHIPPING</h3> <h6> Experience the  <br> convinience of FREE <br> and FAST shipping on all <br> order! Get your favourite <br> sneakers delivered <br> straight to your doorstep <br> in no time. Shop now <br> and step up your style <br> effortlessly!
-            </div>
-            <div class= "features"> 
-                <h3> 100% REFUND </h3> <h6> " Shop with confidence  <br> Enjoy our 100% refund <br> guarantee on all purchases. If you're not <br> completely satisfied <br> with your sneakers, we will <br> gladly refund your <br> money , no questions <br> asked. Your satisfaction <br> is our priority. Start <br> shopping worry-free <br> today  "
-            </div>
-            <div class= "features"> 
-                 <h3> SUPPORT 24/7 </h3> <h6> Need assistance?  We've  <br> got you covered 24/7 ! <br> Our dedicted support <br> team is here around the <br> clock to answer all your <br> questions and ensure <br> your shopping <br> experience is smooth <br> and seamless. Get the <br> help you need, anytime, <br> anywhere. Shop with <br> confidence! 
-            </div>
+{% extends "home_base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+<div class="middle_container">
+    <h1>Limited Time, Maximum Savings</h1>
+    <a href="{{ url_for('discounts') }}"><h3 class="order_now">Order Now</h3></a>
+</div>
+<div class="sales_box">
+    <h1 class="products">Products</h1>
+</div>
+<div class="puma_box">
+    <h1>Puma Unisex Running <br> Sneaker</h1>
+    <h3>Push your limits with Puma running sneakers.</h3>
+    <h3>Performance and design taken to the edge.</h3>
+    <a href="#"><h3 class="get_yours_now">Get Yours Now</h3></a>
+</div>
+<div class="bottom_flex_container">
+    <div class="bottom_flex">
+        <div class="features">
+            <h3>FREE AND <br> FAST SHIPPING</h3>
+            <h6>Experience the convenience of FREE <br> and FAST shipping on all orders! Get your favourite <br> sneakers delivered straight to your doorstep in no time. Shop now and step up your style effortlessly!</h6>
+        </div>
+        <div class="features">
+            <h3>100% REFUND</h3>
+            <h6>Shop with confidence. Enjoy our 100% refund guarantee on all purchases. If you're not completely satisfied with your sneakers, we will gladly refund your money, no questions asked. Your satisfaction is our priority. Start shopping worry-free today.</h6>
+        </div>
+        <div class="features">
+            <h3>SUPPORT 24/7</h3>
+            <h6>Need assistance? We've got you covered 24/7! Our dedicated support team is here around the clock to answer all your questions and ensure your shopping experience is smooth and seamless. Get the help you need, anytime, anywhere. Shop with confidence!</h6>
         </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}
+

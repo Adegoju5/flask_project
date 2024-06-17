@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Home Page</title>
+    <title> {% block title %} default title {%endblock%}   </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home_base.css') }}">
 </head>
 <body>
@@ -16,5 +16,6 @@
             <li class="nav-item"><a href="#"> <img src='/static/images/shopping_cart.png' >  </a></li>
         </ul>
     </nav>
+    {% block content  %}  {%endblock%}
 </body>
 </html>

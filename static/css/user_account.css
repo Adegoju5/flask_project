@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.inner_container{
+    width: 80%;
+    background-color: aquamarine;
+}

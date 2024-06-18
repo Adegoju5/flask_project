@@ -1,9 +1,12 @@
 .container{
+    background-color:chartreuse;
     display: flex;
     justify-content: center;
+    margin: 40px;
 }
 
 .inner_container{
+    display: flex;
+    justify-content: space-around; 
     width: 80%;
-    background-color: aquamarine;
 }

@@ -1,161 +1,110 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(to right, #00c9ff, #92fe9d, #00c9ff);
-    align-items: center;
-
-
-
-
+body{
+    margin: o;
 }
 
-.top_container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: red;
-    height: 95px;
-
-}
 .navbar {
-    background-color: #333;
-}
-
-.nav-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    list-style-type: none;
-    padding: 0;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
     margin: 0;
 }
 
-.nav-item {
-    padding: 15px 20px;
+.brand-logo {
+    font-size: 2.5em;
 }
 
-.nav-item a {
+.brand-logo a{
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    width: 120px;
+    text-align: center;
+}
+
+.brand-logo a:hover{
+    background-color: darkolivegreen;  
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    display: block;
+    width: 70%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
+    font-size: 1.5em;
     display: block;
-    padding: 30px 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
 }
 
-.nav-item a:hover {
-    background-color: #575757;
-}
-
-.middle_box {
-    height: 250px;
-    background-color: aquamarine;
+.nav-links a:hover{
+    background-color: darkolivegreen;
 
 }
-
-.middle_container {
-    height: 350px;
-    background-color: aquamarine;
-    padding-left: 80px;
-    padding-top: 90px; 
-}   
-
-.middle_container h1 {
-    margin: 0;
+.menu-icon {
+    display: none;
+    font-size: 1em;
+    cursor: pointer;
 }
 
-.order_now{
-    width: 15%;
-    background-color:chartreuse;
-    margin-top: 250px;
+.mobile-nav {
+    display: none;
+    background-color: #333;
+    width: 100%;
+    transition: top 0.5s ease;
+    z-index: 1;
+
+}
+
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.mobile-nav ul a {
+    color: white;
+    display: block;
+    background-color: blueviolet;
+    text-decoration: none;
+    font-size: 2.0em;
     text-align: center;
 }
 
-.sales_box {
-    padding-left: 70px;
-    padding-top: 70px;
-    padding-right: 70px;
-    padding-bottom: 70px;
-    height: 800px;
-    background-color: brown;
-}
 
-.products{
-    text-align: center;
-    background-color: crimson;
-}
 
-.puma_box {
-    padding-left: 70px;
-    padding-top: 70px;
-    padding-right: 70px;
-    padding-bottom: 30px;
-    background-color:darkorange;
-
-}
-
-.get_yours_now{
-    width: 35%;
-    background-color:chartreuse;
-    margin-top: 100px;
-    text-align: center;
-}
-
-.bottom_flex_container {
-    min-height: 250px;
-    background-color: rgb(191, 179, 179);
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 20px;
-
-}
-
-.bottom_flex {
-    margin: o;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 
 @media screen and (max-width: 767px) {
-    .middle_container {
-        height: 350px;
-        background-color: aquamarine;
-        padding-left: 35px;
-        padding-top: 60px; 
-    } 
-    
-    .order_now{
-        width: 35%;
-        background-color:chartreuse;
-        margin-top: 200px;
-        text-align: center;
+    .nav-links {
+        display: none;
     }
 
-    .sales_box {
-        padding-left: 35px;
-        padding-top: 40px;
-        padding-right: 35px;
-        padding-bottom: 40px;
-        height: 800px;
-        background-color: brown;
+    .menu-icon {
+        display: block;
+        background-color: chartreuse;
     }
-
-    .puma_box {
-        padding-left: 35px;
-        padding-top: 40px;
-        padding-right: 35px;
-        padding-bottom: 40px;
-        background-color:darkorange;
-    
+    .drop_up_icon {
+        display: none;
     }
-    .get_yours_now{
-        width: 95%;
-    }
-
-    .nav-list {
-        flex-direction: column; 
-        align-items: center; 
-    }
-
 
 }
 

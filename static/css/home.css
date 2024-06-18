@@ -106,8 +106,5 @@
         width: 95%;
     }
 
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
+
 }

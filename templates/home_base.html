@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {% block title %} default title {%endblock%}   </title>
+    <title>{% block title %}default title{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home_base.css') }}">
 </head>
 <body>
     <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="{{ url_for('landing_page') }}"> <img src='static/images/home.png'> </a></li>
-            <li class="nav-item larger_space"><a href="{{ url_for('discounts') }}">Discounts</a></li>
-            <li class="nav-item "><a href="{{url_for('categories')}}">Categories</a></li>
-            <li class="nav-item "><a href="{{url_for('user_account')}}">Account</a></li>
-            <li class="nav-item"><a href="#"> <img src='/static/images/shopping_cart.png' >  </a></li>
+        <div class="brand-logo" ><a href="{{ url_for('home') }}">Brand</a></div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('discounts') }}">Discounts</a></li>
+            <li><a href="{{url_for('categories')}}">Categories</a></li>
+            <li><a href="{{url_for('user_account')}}">Account</a></li>
+            <li><a href="#"> <img src='/static/images/shopping_cart.png' > </a></li>
         </ul>
+        <div class="menu-icon">
+            <img class= "drop_down_icon" src="/static/images/arrow_drop_down.png" alt="Menu">
+            <img class= "drop_up_icon" src="/static/images/arrow_drop_up.png" alt="Menu">
+        </div>
     </nav>
-    {% block content  %}  {%endblock%}
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="{{ url_for('discounts') }}">Discounts</a></li>
+            <li><a href="{{url_for('categories')}}">Categories</a></li>
+            <li><a href="{{url_for('user_account')}}">Account</a></li>
+        </ul>
+    </div>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='javascripts/mobile_response.js') }}"></script>
 </body>
 </html>

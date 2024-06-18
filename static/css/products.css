@@ -28,7 +28,7 @@
 
 .products_item{
     background-color:whitesmoke;
-    height: 500px;
+    min-height: 500px;
 }
 
 .products_item img {
@@ -38,4 +38,8 @@
 
 .products_item a {
     text-decoration: none; 
+}
+
+p{
+    max-width: 300px;
 }

@@ -15,11 +15,11 @@
 }
 
 .middle_container .order_now {
-    text-decoration: none !important;
+    text-decoration: none 
 }
 
 .order_now {
-    width: 15%;
+    width: 35%;
     background-color: chartreuse;
     margin-top: 250px;
     text-align: center;

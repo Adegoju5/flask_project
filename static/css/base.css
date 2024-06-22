@@ -12,6 +12,7 @@ body{
     margin: 0;
 }
 
+
 .brand-logo {
     font-size: 2.5em;
 }
@@ -21,8 +22,10 @@ body{
     color: white;
     border-radius: 10px;
     display: block;
-    width: 120px;
     text-align: center;
+    width: 150px;
+    height: 80px;
+    align-content: center;
 }
 
 .brand-logo a:hover{
@@ -33,13 +36,7 @@ body{
     list-style: none;
     display: flex;
     gap: 20px;
-    display: block;
     width: 70%;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
     justify-content: space-around;
 }
 
@@ -48,9 +45,11 @@ body{
     text-decoration: none;
     font-size: 1.5em;
     display: block;
-    width: 150px;
     text-align: center;
     border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    align-content: center;
 }
 
 .nav-links a:hover{

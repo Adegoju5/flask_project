@@ -21,8 +21,10 @@ body{
     color: white;
     border-radius: 10px;
     display: block;
-    width: 120px;
     text-align: center;
+    width: 150px;
+    height: 80px;
+    align-content: center;
 }
 .brand-logo a:hover{
     background-color: darkolivegreen;  
@@ -32,12 +34,7 @@ body{
     list-style: none;
     display: flex;
     gap: 20px;
-    display: block;
     width: 70%;
-}
-
-.nav-links {
-    display: flex;
     justify-content: space-around;
     align-items: center;
 }
@@ -47,9 +44,11 @@ body{
     text-decoration: none;
     font-size: 1.5em;
     display: block;
-    width: 150px;
     text-align: center;
     border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    align-content: center;
 }
 
 .nav-links a:hover{

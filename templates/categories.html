@@ -9,7 +9,7 @@
     <div class="conatainer">
         <ul class="list">
             {% for category in category_list %}
-                <li class="category"> <a href="{{url_for('products', category=category)}}"> {{category}}  </a>  </li>
+                <li class="category"> <a href="{{url_for('products', argument=category)}}"> {{category}}  </a>  </li>
             {%endfor %}
         </ul>    
        

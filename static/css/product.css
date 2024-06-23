@@ -1,0 +1,55 @@
+.container{
+    padding-left: 400px;
+    padding-top: 50px;
+    padding-right: 400px;
+}
+
+.product_container{
+    background-color: brown;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+img{
+    width: 350px;
+    height: 440px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+h1{
+    background-color: aqua;
+    margin: 0;
+    text-align: center;
+}
+
+h3{
+    display: inline;
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.overview_container{
+    background-color: burlywood;
+    display: flex;
+}
+
+.product_details{
+    display: flex;
+    flex-direction: column;
+    background-color: chartreuse;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button{
+    border-radius: 10px;
+    display: block;
+    width: 50%;
+    height: 30px;
+    font-weight: 300;
+    font-size: larger;
+}

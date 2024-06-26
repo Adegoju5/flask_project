@@ -1,32 +1,39 @@
 {% extends "home_base.html" %}
-{% block title %}products{% endblock %}
+{% block title %}Home Page{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
-      <div class="container">
-        <div class="product_container">
-           <h1> product </h1>
-           <div class="overview_container" > 
-               <img src="{{ url_for('static', filename=filtered_product.image_path) }}" alt="{{ filtered_product.name }}">
-               <div class="product_details">
-                 <h3> {{filtered_product.description}} </h3>
-                 <h3>Color: 
-                 <select id="color" name="color">
-                    {%for color in similar_products_in_color %}
-                     <option value=""> {{color}} </option>
-                     {%endfor%} 
-                 </select> </h3>
-                 <h3>Size: 
+<div class="container">
+    <div class="product_container">
+        <h1>Product</h1>
+        <div class="overview_container">
+            <img class="product-image" src="{{ url_for('static', filename=filtered_product.image_path) }}" alt="{{ filtered_product.name }}">
+            <div class="product_details">
+                <h3 id="product-name" data-description="{{ filtered_product.name}}">{{ filtered_product.name}}</h3>
+                <h3>Color:
+                    <select id="color" name="color">
+                        {% for color in similar_products_in_color %}
+                            <option value="{{ color }}">{{ color }}</option>
+                        {% endfor %}
+                    </select>
+                </h3>
+                <h3>Size:
                     <select id="size" name="size">
-                       {%for size in similar_products_in_sizes %}
-                        <option value=""> {{size}} </option>
-                        {%endfor%} 
-                    </select> </h3>
-                 <h3> prize: {{filtered_product.price}}</h3>
-                 <button> Add to Cart </button>
-               </div>
-           </div>
+                        {% for size in similar_products_in_size %}
+                            <option value="{{ size }}">{{ size }}</option>
+                        {% endfor %}
+                    </select>
+                </h3>
+                <h3 id="product-price">Price: {{ filtered_product.price }}</h3>
+                <button>Add to Cart</button>
+            </div>
         </div>
-      </div>
-
+    </div>
+</div>
 {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='javascripts/change_product_color.js') }}"></script>
+<script src="{{ url_for('static', filename='javascripts/change_product_size.js') }}"></script>
+{% endblock %}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Cart</h1>
+    <div class="container">
+        <div class="product_details">
+                <div class="product_details_inner2">
+                    <img id="product-image" class="product-img" src="{{ url_for('static', filename='images/black_nike_air.png') }}" alt="Product Image">
+                    <div class="product-ids">
+                        <h5> product_name </h5>
+                        <h5> product_color </h5>
+                        <h5>Size: product_size </h5>
+                        <h5>Price: product_price </h5>
+                        <div class="icons">
+                            <img class="icon" src="{{ url_for('static', filename='images/remove.png') }}" alt="Remove">
+                             <h4> 4 </h4>
+                            <img class="icon" src="{{ url_for('static', filename='images/add.png') }}" alt="Add">
+                        </div>
+                    </div>
+                    <div class="delete_container">
+                    <a> <img class="delete"src="{{ url_for('static', filename='images/delete.png') }}"> </img> </a>
+                    </div>
+                </div>
+                <div class="product_details_inner2">
+                    <img id="product-image" class="product-img" src="{{ url_for('static', filename='images/black_nike_air.png') }}" alt="Product Image">
+                    <div class="product-ids">
+                        <h5> product_name </h5>
+                        <h5> product_color </h5>
+                        <h5>Size:  product_size </h5>
+                        <h5>Price: product_price </h5>
+                        <div class="icons">
+                            <img class="icon" src="{{ url_for('static', filename='images/remove.png') }}" alt="Remove">
+                             <h4> 4 </h4>
+                            <img class="icon" src="{{ url_for('static', filename='images/add.png') }}" alt="Add">
+                        </div>
+                    </div>
+                    <div class="delete_container">
+                    <a> <img class="delete"src="{{ url_for('static', filename='images/delete.png') }}"> </img> </a>
+                    </div>
+                </div>
+        </div>
+        <div class="cart-details">
+            <div class="cart-details-inner">
+            <h3>Cart Summary</h3>
+            <div class="total-s"> <h4> total sum</h4> <h4> 50$ </h4> </div>
+            <div class="total-s"> <h4> total items</h4> <h4> 50 </h4> </div>  
+            <div class="total-s"> <h4> Delivery</h4> <h4> Free </h4> </div> 
+            <div class="payment-box">
+            <button> make payment </button>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

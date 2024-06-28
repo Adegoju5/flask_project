@@ -1,11 +1,10 @@
 from flask import render_template, request, redirect, url_for, flash
 from db import db
 from models.users_model import User
-from uuid import uuid4
+from werkzeug.security import generate_password_hash
 
 def register():
     if request.method == 'POST':
-        print(request.form)
         first_name = request.form['first_name']
         last_name = request.form['last_name']
         gender = request.form['gender']
@@ -23,8 +22,8 @@ def register():
             flash('Passwords do not match. Please try again.', 'error')
             return redirect(url_for('register'))
         
+        # Do not assign id directly, let SQLAlchemy handle it
         new_user = User(
-            id=uuid4(),
             first_name=first_name,
             last_name=last_name,
             gender=gender,
@@ -35,13 +34,12 @@ def register():
             country=country,
             home_address=home_address,
             delivery_address=delivery_address,
-            password=password
+            password=generate_password_hash(password, method='pbkdf2:sha256')
         )
         
         try:
             db.session.add(new_user)
             db.session.commit()
-            flash('User registered successfully!', 'success')
             return redirect(url_for('login'))
         except Exception as e:
             db.session.rollback()

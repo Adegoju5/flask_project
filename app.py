@@ -2,6 +2,9 @@
 from flask import Flask
 from db import db 
 import logging
+from extensions import login_manager
+from models.users_model import User
+from datetime import timedelta
 
 app = Flask(__name__)
 
@@ -10,9 +13,11 @@ app.secret_key = 'Fabregas_3015$'
 # Configure the SQLite database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://debowalealex:Fabregas_3015$@localhost:5432/flask'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 # Initialize the database
 db.init_app(app)
+login_manager.init_app(app)
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -45,7 +50,9 @@ app.add_url_rule('/discounts', view_func=discounts, methods=['GET'])
 app.add_url_rule('/account', view_func=user_account, methods=['GET'])
 app.add_url_rule('/cart', view_func=cart, methods=['GET'])
 
-
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 if __name__ == '__main__':
     app.run(debug=True)

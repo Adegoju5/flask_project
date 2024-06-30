@@ -4,11 +4,16 @@ function handleColorChange() {
     const size = document.getElementById('size').value;
 
     // Construct the fetch URL dynamically based on the selected color, name, and size
-    const fetchUrl = `/product?color=${selectedColor}&name=${name}&size=${size}`;
+    let fetchUrl = `/change_product?color=${encodeURIComponent(selectedColor)}&name=${encodeURIComponent(name)}&size=${encodeURIComponent(size)}`;
 
     // Make an API request to fetch new product details based on the selected color
     fetch(fetchUrl)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             console.log("Received data from server:", data); 
             const { filtered_product, similar_products_in_color, similar_products_in_size } = data;

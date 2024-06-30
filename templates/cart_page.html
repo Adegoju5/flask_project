@@ -10,53 +10,54 @@
     <h1>Cart</h1>
     <div class="container">
         <div class="product_details">
+            {% if cart %}
+                {% for product in cart %}
                 <div class="product_details_inner2">
-                    <img id="product-image" class="product-img" src="{{ url_for('static', filename='images/black_nike_air.png') }}" alt="Product Image">
+                    <div class="product-img-box">
+                        <img id="product-image" class="product-img" src="{{ url_for('static', filename=product.image_path) }}" alt="Product Image">
+                    </div>
                     <div class="product-ids">
-                        <h5> product_name </h5>
-                        <h5> product_color </h5>
-                        <h5>Size: product_size </h5>
-                        <h5>Price: product_price </h5>
+                        <h5>{{ product.name }}</h5>
+                        <h5>{{ product.color }}</h5>
+                        <h5>Size: {{ product.size }}</h5>
+                        <h5>Price: {{ product.price }}</h5>
                         <div class="icons">
-                            <img class="icon" src="{{ url_for('static', filename='images/remove.png') }}" alt="Remove">
-                             <h4> 4 </h4>
-                            <img class="icon" src="{{ url_for('static', filename='images/add.png') }}" alt="Add">
+                            <img onclick="location.href='{{ url_for('substract_from_cartItem', product_id=product.id) }}'" class="icon" src="{{ url_for('static', filename='images/remove.png') }}" alt="Remove">
+                            <h4>{{ product.quantity }}</h4>
+                            <img onclick="location.href='{{ url_for('add_to_cartItem', product_id=product.id) }}'" class="icon" src="{{ url_for('static', filename='images/add.png') }}" alt="Add">
                         </div>
                     </div>
                     <div class="delete_container">
-                    <a> <img class="delete"src="{{ url_for('static', filename='images/delete.png') }}"> </img> </a>
+                        <a> <img onclick="location.href='{{ url_for('remove_from_cartItem', product_id=product.id) }}'" class="delete"src="{{ url_for('static', filename='images/delete.png') }}"> </img> </a>
                     </div>
                 </div>
-                <div class="product_details_inner2">
-                    <img id="product-image" class="product-img" src="{{ url_for('static', filename='images/black_nike_air.png') }}" alt="Product Image">
-                    <div class="product-ids">
-                        <h5> product_name </h5>
-                        <h5> product_color </h5>
-                        <h5>Size:  product_size </h5>
-                        <h5>Price: product_price </h5>
-                        <div class="icons">
-                            <img class="icon" src="{{ url_for('static', filename='images/remove.png') }}" alt="Remove">
-                             <h4> 4 </h4>
-                            <img class="icon" src="{{ url_for('static', filename='images/add.png') }}" alt="Add">
-                        </div>
-                    </div>
-                    <div class="delete_container">
-                    <a> <img class="delete"src="{{ url_for('static', filename='images/delete.png') }}"> </img> </a>
-                    </div>
-                </div>
+                {% endfor %}
+            {% else %}
+                <h4 class="empty">Your cart is empty</h4>
+            {% endif %}
         </div>
         <div class="cart-details">
             <div class="cart-details-inner">
-            <h3>Cart Summary</h3>
-            <div class="total-s"> <h4> total sum</h4> <h4> 50$ </h4> </div>
-            <div class="total-s"> <h4> total items</h4> <h4> 50 </h4> </div>  
-            <div class="total-s"> <h4> Delivery</h4> <h4> Free </h4> </div> 
-            <div class="payment-box">
-            <button> make payment </button>
-            </div>
+                <h3>Cart Summary</h3>
+                <div class="total-s">
+                    <h4>Total Sum</h4>
+                    <h4>{{ cart_total.price }}$</h4>
+                </div>
+                <div class="total-s">
+                    <h4>Total Items</h4>
+                    <h4>{{ cart_total.no_of_items }}</h4>
+                </div>  
+                <div class="total-s">
+                    <h4>Delivery</h4>
+                    <h4>Free</h4>
+                </div> 
+                <div class="payment-box">
+                    <button>Make Payment</button>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
 

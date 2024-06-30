@@ -3,7 +3,7 @@ function handleSizeChange() {
     const name = document.getElementById('product-name').innerText;
     const color = document.getElementById('color').value;
 
-    const fetchUrl = `/product?color=${color}&name=${name}&size=${selectedSize}`;
+    const fetchUrl = `/change_product?color=${color}&name=${name}&size=${selectedSize}`;
 
     fetch(fetchUrl)
         .then(response => response.json())

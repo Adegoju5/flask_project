@@ -19,7 +19,7 @@ h1{
     flex:1;
     padding-left: 1%;
     padding-right: 1%;
-    height: auto;
+    height: 40vh;
 }
 
 .cart-details-inner h4{
@@ -38,7 +38,8 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 48.2%;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 
@@ -70,8 +71,12 @@ button{
     background-color: black;
 }
 
+.product-img-box{
+    width: 35%;
+}
+
 .product-img {
-    max-width: 35%;
+    width: 100%;
 
 }
 
@@ -102,22 +107,30 @@ button{
 .delete_container{
     width: 25%;
     display: flex;
-    justify-content: flex-end;
+    position: relative;
+
 }
 .delete_container a{
     display: block;
-    width: 30%;
-    height: 15%;
+    width: 25%;
+    height: 12%;
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
 .delete{
     background-color: black;
     width: 100%;
     height: 100%;
+    background-color: brown;
+
 }
 
-
+.empty{
+    margin:0;
+    padding: 0;
+}
 
 @media screen and (max-width: 780px){
     .container{

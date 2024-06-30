@@ -2,7 +2,7 @@ from flask import request, jsonify, render_template
 from models.products import Product
 from db import db
 
-def product():
+def change_product():
     color = request.args.get('color')
     name = request.args.get('name')
     size = request.args.get('size')
@@ -29,7 +29,8 @@ def product():
             similar_products_in_color = [filtered_product.color] + [c[0] for c in similar_products_in_color if c[0] != filtered_product.color]
             print(filtered_product, similar_products_in_color, similar_products_in_size, 'alex')
             
-            return jsonify({
+
+            response = {
                 'filtered_product': {
                     'name': filtered_product.name,
                     'price': filtered_product.price,
@@ -37,7 +38,9 @@ def product():
                 },
                 'similar_products_in_size': similar_products_in_size,
                 'similar_products_in_color': similar_products_in_color
-            })
+            }
+            print(response)
+            
+            return jsonify(response)
     
     return render_template('login.html')
-

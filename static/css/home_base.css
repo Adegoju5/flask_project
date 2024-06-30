@@ -59,7 +59,10 @@ body{
     height: 100%;
     align-content: center;
 }
-
+.brand-text h6{
+    margin: 0;
+    font-size:small;
+}
 .nav-links a:hover{
     background-color: darkolivegreen;
 }

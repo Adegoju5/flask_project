@@ -7,7 +7,7 @@
     <div class="product_container">
         <h1>Product</h1>
         <div class="overview_container">
-            <img class="product-image" src="{{ url_for('static', filename=filtered_product.image_path) }}" alt="{{ filtered_product.name }}">
+            <img id="product-image" class="product-image" src="{{ url_for('static', filename=filtered_product.image_path) }}" alt="{{ filtered_product.name }}">
             <div class="product_details">
                 <h3 id="product-name" data-description="{{ filtered_product.name}}">{{ filtered_product.name}}</h3>
                 <h3>Color:
@@ -25,7 +25,7 @@
                     </select>
                 </h3>
                 <h3 id="product-price">Price: {{ filtered_product.price }}</h3>
-                <button>Add to Cart</button>
+                <button onclick="location.href='{{ url_for('add_to_cartItem', product_id=filtered_product.id) }}'">Add to Cart</button>
             </div>
         </div>
     </div>

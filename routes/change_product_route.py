@@ -27,11 +27,12 @@ def change_product():
             
             similar_products_in_size = [filtered_product.size] + [s[0] for s in similar_products_in_size if s[0] != filtered_product.size]
             similar_products_in_color = [filtered_product.color] + [c[0] for c in similar_products_in_color if c[0] != filtered_product.color]
-            print(filtered_product, similar_products_in_color, similar_products_in_size, 'alex')
+            print(filtered_product.id)
             
 
             response = {
                 'filtered_product': {
+                    'id':filtered_product.id,
                     'name': filtered_product.name,
                     'price': filtered_product.price,
                     'image_path': filtered_product.image_path

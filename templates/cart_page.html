@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
-    <title>Cart</title>
-</head>
-<body>
+{% extends "home_base.html" %}
+{% block title %}Cart Page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
     <h1>Cart</h1>
     <div class="container">
         <div class="product_details">
@@ -41,11 +37,11 @@
                 <h3>Cart Summary</h3>
                 <div class="total-s">
                     <h4>Total Sum</h4>
-                    <h4>{{ cart_total.price }}$</h4>
+                    <h4>{{ cart_total_price }}$</h4>
                 </div>
                 <div class="total-s">
                     <h4>Total Items</h4>
-                    <h4>{{ cart_total.no_of_items }}</h4>
+                    <h4>{{ no_of_cartItems }}</h4>
                 </div>  
                 <div class="total-s">
                     <h4>Delivery</h4>
@@ -57,7 +53,6 @@
             </div>
         </div>
     </div>
-</body>
-</html>
 
+{% endblock %}
 

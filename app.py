@@ -38,10 +38,12 @@ from routes.cart_route import cart
 from routes.add_to_cartItem_route import add_to_cartItem
 from routes.substract_from_cartItem_route import substract_from_cartItem
 from routes.remove_from_cartItem import remove_from_cartItem
+from routes.logout_route import logout
 
 # Register routes
 app.add_url_rule('/home', view_func=home)
 app.add_url_rule('/login', view_func=login, methods=['GET', 'POST'])
+app.add_url_rule('/logout', view_func=logout)
 app.add_url_rule('/register', view_func=register, methods=['GET', 'POST'])
 app.add_url_rule('/product_add', view_func=add_product, methods=['GET', 'POST'])
 app.add_url_rule('/categories', view_func=categories, methods=['GET', 'POST'])

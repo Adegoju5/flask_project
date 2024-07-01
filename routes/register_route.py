@@ -1,9 +1,12 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, session
 from db import db
 from models.users_model import User
 from werkzeug.security import generate_password_hash
 
 def register():
+    total = session.get('total', {})
+    no_of_cartItems = total.get('no_of_items', 0)
+    no_of_cartItems = no_of_cartItems if no_of_cartItems else ''
     if request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
@@ -46,5 +49,5 @@ def register():
             flash(f'Error registering user: {str(e)}', 'error')
             return redirect(url_for('register'))
             
-    return render_template('register.html')
+    return render_template('register.html', no_of_cartItems=no_of_cartItems)
 

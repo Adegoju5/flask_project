@@ -20,5 +20,6 @@ def cart():
         list_of_products.append(product)
     total['price'] = cart_total_sum
     total['no_of_items'] = cart_total_item
-    return render_template('cart_page.html', cart=list_of_products, cart_total=total)
+    session['total'] = total
+    return render_template('cart_page.html', cart=list_of_products, cart_total_price=cart_total_sum, no_of_cartItems=cart_total_item if cart_total_item else '')
 

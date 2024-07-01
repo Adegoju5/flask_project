@@ -1,6 +1,7 @@
 from flask import render_template, session, redirect, url_for
 
 def add_to_cartItem(product_id):
+    print(product_id, 'alex')
     if 'cart' not in session:
         session['cart'] = {}
     pass

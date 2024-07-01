@@ -1,6 +1,8 @@
 .container{
-    padding: 40px;
-    margin: 40px;
+    padding: 10%;
+    margin: 10%;
+    padding-top: 0%;
+    margin-top: 5%;
 }
 
 .inner_container{
@@ -18,12 +20,12 @@
 .user_info {
     list-style-type: none;
     padding: 0px;
-    margin-top: 65px;
+    margin-top: 10vh;
     display: flex;
-    background-color: beige;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 10px ;
+    justify-content:left;
+    gap: 7vh ;
 }
 
 .user_info li{

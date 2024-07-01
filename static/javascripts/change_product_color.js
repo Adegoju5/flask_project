@@ -42,6 +42,10 @@ function handleColorChange() {
                 option.text = size;
                 sizeSelect.appendChild(option);
             });
+
+            // Update the "Add to Cart" button's onclick attribute
+            const addToCartButton = document.getElementById('add-to-cart-button');
+            addToCartButton.setAttribute("onclick", `location.href='/add_to_cartItem/${filtered_product.id}'`);
         })
         .catch(error => console.error('Error fetching product details:', error));
 }
@@ -50,3 +54,4 @@ function handleColorChange() {
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('color').addEventListener('change', handleColorChange);
 });
+

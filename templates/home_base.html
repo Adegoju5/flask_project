@@ -13,7 +13,7 @@
             <li><a class="brand-text" href="{{ url_for('discounts') }}">Discounts</a></li>
             <li><a class="brand-text" href="{{url_for('categories')}}">Categories</a></li>
             <li><a class="brand-text" href="{{url_for('user_account')}}">Account</a></li>
-            <li><a class="brand-text" href="{{url_for('cart')}}"> <h6> 2 </h6> <img src='/static/images/shopping_cart.png' > </a></li>
+            <li><a class="brand-text" href="{{url_for('cart')}}"> <h6> {{no_of_cartItems}} </h6> <img src='/static/images/shopping_cart.png' > </a></li>
         </ul>
         <div class="menu-icon">
             <img class= "drop_down_icon" src="/static/images/arrow_drop_down.png" alt="Menu">

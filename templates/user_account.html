@@ -7,15 +7,20 @@
           <h1> Your Profile </h1> 
           <div class="inner_container">
             <button> ordered items </button>
-            <button> edit profile </button>
             <button> return item </button>
+            <button> edit profile </button>
+            <button onclick="location.href='{{ url_for('logout') }}'"> logout </button>
           </div> 
 
           <ul class="user_info">
-            <li> name: alex</li>
-            <li> age: 32 </li>
-            <li> location: cologne </li>
-            <li> area: königswinter </li>
+            <li> first name: {{user.first_name}} </li>
+            <li> last name: {{user.last_name}} </li>
+            <li> gender: {{user.gender}} </li>
+            <li> telephone: {{user.telephone}} </li>
+            <li> dob: {{user.date_of_birth}} </li>
+            <li> email: {{user.email}} </li>
+            <li> age: {{user.age}} </li>
+            <li> country: {{user.country}} </li>
           </ul>
 
 

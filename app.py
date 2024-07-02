@@ -2,7 +2,7 @@
 from flask import Flask
 from db import db 
 import logging
-from extensions import login_manager
+from extensions import login_manager, mail
 from models.users_model import User
 from datetime import timedelta
 
@@ -14,10 +14,16 @@ app.secret_key = 'Fabregas_3015$'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://debowalealex:Fabregas_3015$@localhost:5432/flask'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'adegojualexander@gmail.com'
+app.config['MAIL_PASSWORD'] = 'rzjnzfwohilzaywh'
 
 # Initialize the database
 db.init_app(app)
 login_manager.init_app(app)
+mail.init_app(app)
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -39,6 +45,8 @@ from routes.add_to_cartItem_route import add_to_cartItem
 from routes.substract_from_cartItem_route import substract_from_cartItem
 from routes.remove_from_cartItem import remove_from_cartItem
 from routes.logout_route import logout
+from routes.reset_request_route import reset_request
+from routes.reset_token_route import reset_token
 
 # Register routes
 app.add_url_rule('/home', view_func=home)
@@ -57,6 +65,11 @@ app.add_url_rule('/cart', view_func=cart, methods=['GET'])
 app.add_url_rule('/add_to_cartItem/<product_id>', view_func=add_to_cartItem, methods=['GET'])
 app.add_url_rule('/substract_from_cartItem/<product_id>', view_func=substract_from_cartItem, methods=['GET'])
 app.add_url_rule('/remove_from_cartItem/<product_id>', view_func=remove_from_cartItem, methods=['GET'])
+app.add_url_rule('/reset_request', view_func=reset_request, methods=['GET', 'POST'])
+app.add_url_rule('/reset_token/<token>', view_func=reset_token, methods=['GET', 'POST'])
+
+
+
 
 @login_manager.user_loader
 def load_user(user_id):

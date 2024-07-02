@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "landing_base.html" %}
+
+{% block title %} Reset Token {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+<div class="container"> 
+<div class="form_container">
+    <h2>Reset Password</h2>
+    <div class="inner_container">
+    <form  action="{{ url_for('reset_token', token=token) }}" method="POST">
+        <label for="password">Enter your new password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="password">repeat new password</label>
+        <input type="password" name="repeat_password" id="repeat_password" required>        
+        <button type="submit">Request Password Reset</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

@@ -110,6 +110,11 @@
     .get_yours_now {
         width: 95%;
     }
+    .bottom_flex_container {
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 20px;
+    }
 
 
 }

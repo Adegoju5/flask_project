@@ -98,13 +98,14 @@ body{
 .mobile-nav ul a {
     color: white;
     display: block;
-    background-color: blueviolet;
     text-decoration: none;
     font-size: 2.0em;
     text-align: center;
 }
 
-
+.mobile-nav ul a img{
+    width: 10%;
+}
 
 
 @media screen and (max-width: 767px) {
@@ -114,10 +115,17 @@ body{
 
     .menu-icon {
         display: block;
-        background-color: chartreuse;
     }
     .drop_up_icon {
         display: none;
+    }
+
+    .brand-logo {
+        width: 25%;
+    }
+    
+    .brand-text{
+        font-size: 4vw;
     }
 
 }

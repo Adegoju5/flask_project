@@ -4,8 +4,9 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/categories.css') }}">
 
+
+<h1 class="product_category"> Product Categories <h1>
 <div class="products_container">
-    <h1> Product Categories <h1>
     <div class="conatainer">
         <ul class="list">
             {% for category in category_list %}

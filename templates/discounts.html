@@ -10,7 +10,7 @@
             <ul class= "products_list"> 
                 {% for product in discounted_products%}
                 <li  class= "products_item">
-                   <a  href=#> 
+                   <a href="{{ url_for('products', argument=product.id) }}"> 
                    <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}">
                    <p> {{product.name}} </p>
                    <p> {{product.price}} </p>

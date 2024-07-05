@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "landing_base.html" %}
+
+{% block title %} Update User Profile {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+<div class="container"> 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <h4 class="flash-message" id="{{ category }}">{{ message }}</h4>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+<div class="form_container">
+    <h2>Update Profile</h2>
+    <div class="inner_container">
+    <form  action="{{ url_for('update_user_profile') }}" method="POST">
+        <label for="first_name">First Name</label>
+        <input type="text" value="{{ user.first_name or '' }}" name="first_name" id="first_name" required>
+
+        <label for="last_name">Last Name</label>
+        <input type="text" value="{{ user.last_name or '' }}" name="last_name" id="last_name" required>
+
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" >
+            <option value="">Select your gender</option>
+            <option value="male" {% if user.gender == 'male' %}selected{% endif %}>Male</option>
+            <option value="female" {% if user.gender == 'female' %}selected{% endif %}>Female</option>
+            <option value="other" {% if user.gender == 'other' %}selected{% endif %}>Other</option>
+        </select>      
+
+        <label for="telephone">Telephone</label>
+        <input type="tel" value="{{ user.telephone or '' }}" name="telephone" id="telephone" >
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" value="{{ user.date_of_birth or '' }}" name="dob" id="dob" >
+
+        <label for="email">Email</label>
+        <input type="email" value="{{ user.email or '' }}" name="email" id="email" readonly required>
+
+        <label for="country">Country</label>
+        <input type="text" value="{{ user.country or '' }}" name="country" id="country" >
+
+        <label for="post_code">Post Code</label>
+        <input type="number" value="{{ user.post_code or '' }}" name="post_code" id="post_code" >
+
+        <label for="delivery_address">Delivery Address</label>
+        <input type="text" value="{{ user.delivery_address or '' }}" name="delivery_address" id="delivery_address" >
+
+        <button type="submit">Update Profile</button>
+    </form>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='javascripts/dismiss_flash_messages.js') }}"></script>
+{% endblock %}

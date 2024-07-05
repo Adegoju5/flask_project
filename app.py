@@ -47,6 +47,7 @@ from routes.remove_from_cartItem import remove_from_cartItem
 from routes.logout_route import logout
 from routes.reset_request_route import reset_request
 from routes.reset_token_route import reset_token
+from routes.update_user_profile_route import update_user_profile
 
 # Register routes
 app.add_url_rule('/home', view_func=home)
@@ -67,7 +68,7 @@ app.add_url_rule('/substract_from_cartItem/<product_id>', view_func=substract_fr
 app.add_url_rule('/remove_from_cartItem/<product_id>', view_func=remove_from_cartItem, methods=['GET'])
 app.add_url_rule('/reset_request', view_func=reset_request, methods=['GET', 'POST'])
 app.add_url_rule('/reset_token/<token>', view_func=reset_token, methods=['GET', 'POST'])
-
+app.add_url_rule('/update_user_profile', view_func=update_user_profile, methods=['GET', 'POST'])
 
 
 

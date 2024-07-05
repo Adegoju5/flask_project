@@ -1,14 +1,17 @@
 .container{
-    padding: 10%;
-    margin: 10%;
+    padding: 5%;
+    margin: 5%;
     padding-top: 0%;
-    margin-top: 5%;
+    margin-top: 2%;
+    border: solid 1px black;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .inner_container{
     display: flex;
     justify-content: space-around; 
-    background-color: chartreuse;
+    background-color:blanchedalmond;
 }
 
 .inner_container button{
@@ -20,15 +23,38 @@
 .user_info {
     list-style-type: none;
     padding: 0px;
-    margin-top: 10vh;
+    margin-top: 5vh;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    justify-content:left;
-    gap: 7vh ;
+    gap:1vh;
 }
 
 .user_info li{
-    min-width: 350px;
+    min-width: 100%;
     font-size: 1.5em;
+}
+
+#success {
+    background-color: green;
+    color: white; 
+    padding: 10px;
+    border: 1px solid darkgreen;
+    text-align: center;
+}
+
+#error {
+    background-color: yellow;
+    color: black; 
+    border: 1px solid darkorange;
+    text-align: center;
+}
+
+@media screen and (max-width: 780px){
+    .container{
+        padding: 0;
+        margin: 0;
+        padding-top: 0%;
+        margin-top: 2%;
+    }
 }

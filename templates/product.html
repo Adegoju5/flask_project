@@ -3,9 +3,10 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+<h1>Product</h1>
 <div class="container">
     <div class="product_container">
-        <h1>Product</h1>
+
         <div class="overview_container">
             <img id="product-image" class="product-image" src="{{ url_for('static', filename=filtered_product.image_path) }}" alt="{{ filtered_product.name }}">
             <div class="product_details">

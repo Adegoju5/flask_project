@@ -16,7 +16,7 @@ def login():
         password = request.form.get('password')
         if check_password_hash(user.password, password):
             login_user(user)
-            return redirect(url_for('home'))
+            return redirect(url_for('user_account'))
         else:
             flash("inaccurate credentials, please try again", "error")
             return redirect(url_for('login'))

@@ -63,3 +63,16 @@ button {
     color: black; 
     border: 1px solid darkorange;
 }
+
+
+@media screen and (max-width: 767px) {
+
+    .inner_container {
+        width: 80%;
+    }
+
+    .form_container {
+        width: 80%;
+    }
+
+}

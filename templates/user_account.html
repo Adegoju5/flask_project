@@ -3,27 +3,36 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/user_account.css') }}">
-      <div class="container">
-          <h1> Your Profile </h1> 
-          <div class="inner_container">
-            <button> ordered items </button>
-            <button> return item </button>
-            <button> edit profile </button>
-            <button onclick="location.href='{{ url_for('logout') }}'"> logout </button>
-          </div> 
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+        <h4 class="flash-message" id="{{ category }}">{{ message }}</h4>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container">
+    <h1> Your Profile </h1> 
+    <div class="inner_container">
+        <button> ordered items </button>
+        <button> return item </button>
+        <button  onclick="location.href='{{ url_for('update_user_profile') }}'"> edit profile </button>
+        <button onclick="location.href='{{ url_for('logout') }}'"> logout </button>
+        <button> delete user </button>
+    </div> 
 
-          <ul class="user_info">
-            <li> first name: {{user.first_name}} </li>
-            <li> last name: {{user.last_name}} </li>
-            <li> gender: {{user.gender}} </li>
-            <li> telephone: {{user.telephone}} </li>
-            <li> dob: {{user.date_of_birth}} </li>
-            <li> email: {{user.email}} </li>
-            <li> age: {{user.age}} </li>
-            <li> country: {{user.country}} </li>
-          </ul>
-
-
-      </div>
-
+    <ul class="user_info">
+        <li> first name: {{ user.first_name or '' }} </li>
+        <li> last name: {{ user.last_name or '' }} </li>
+        <li> gender: {{ user.gender or '' }} </li>
+        <li> telephone: {{ user.telephone or '' }} </li>
+        <li> dob: {{ user.date_of_birth or '' }} </li>
+        <li> email: {{ user.email or '' }} </li>
+        <li> country: {{ user.country or '' }} </li>
+        <li> post code: {{ user.post_code or '' }} </li>
+        <li> delivery address: {{ user.delivery_address or '' }} </li>
+    </ul>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='javascripts/dismiss_flash_messages.js') }}"></script>
 {% endblock %}

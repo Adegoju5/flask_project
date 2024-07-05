@@ -1,10 +1,8 @@
-h1 {
+.product_category{
     text-align: center;
+    background-color: blanchedalmond;
 }
 
-.container{
-    background-color:beige;
-}
 
 .list{
     list-style-type: none;
@@ -13,19 +11,13 @@ h1 {
 
 }
 
-.product{
-    text-decoration: none;
-}
-
-
 .category a {
     text-decoration: none;
     display: block;
     width: 100%;
+    text-align: center;
 }
 
 .category a:hover{
-    background-color: #009688;
-
-
+    background-color:grey;
 }

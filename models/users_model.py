@@ -17,9 +17,8 @@ class User(UserMixin, db.Model):
     telephone = db.Column(db.String(20), nullable=True)
     date_of_birth = db.Column(db.Date, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    age = db.Column(db.Integer, nullable=True)
     country = db.Column(db.String(50), nullable=True)
-    home_address = db.Column(db.String(250), nullable=True)
+    post_code = db.Column(db.String(250), nullable=True)
     delivery_address = db.Column(db.String(250), nullable=True)
     password = db.Column(db.String(255), nullable=False)
     

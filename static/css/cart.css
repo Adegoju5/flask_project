@@ -2,6 +2,7 @@
 
 h1{
     text-align: center;
+    background-color: blanchedalmond;
 }
 .container{
     display: flex;
@@ -19,7 +20,7 @@ h1{
     flex:1;
     padding-left: 1%;
     padding-right: 1%;
-    height: 40vh;
+    height: 36vh;
 }
 
 .cart-details-inner h4{
@@ -38,7 +39,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: inherit;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -137,6 +138,10 @@ button{
         margin-left: 0;
         margin-right: 0;
         flex-direction: column;
+    }
+
+    .cart-details{
+        height: 30vh;
     }
 
 }

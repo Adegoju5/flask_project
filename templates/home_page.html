@@ -10,6 +10,14 @@
 </div>
 <div class="sales_box"> 
     <h1 class="products">Products</h1>
+    <ul class= "products_list"> 
+        {% for product in products%}
+        <li  class= "products_item">
+           <a  href="{{ url_for('products', argument=product.id) }}"> 
+           <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}">
+           </a>
+        </li>
+        {%endfor%}
 </div>
 <div class="puma_box"> 
     <h1>Puma Unisex Running <br> Sneaker</h1>

@@ -4,11 +4,15 @@
 }
 
 .middle_container {
-    height: 350px;
-    background-color: aquamarine;
+    height: 85vh;
     padding-left: 80px;
     padding-top: 90px;
+    background-image: url("/static/images/shoe1.jpeg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; /* Optional: to center the image */
 }
+
 
 .middle_container h1 {
     margin: 0;
@@ -28,24 +32,58 @@
 
 .sales_box {
     padding-left: 70px;
-    padding-top: 70px;
+    padding-top: 30px;
     padding-right: 70px;
     padding-bottom: 70px;
-    height: 800px;
-    background-color: brown;
+    height: auto;
+    background-color: whitesmoke;
 }
+
+.products_list{
+    list-style-type: none;
+    display: flex;
+    justify-content:space-between;
+    margin-left: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap:10px;  
+    justify-items: center; 
+    width: 100%;
+}
+
+.products_item{
+    background-color:whitesmoke;
+    display: block;
+    min-height: auto;
+    width: 25%;
+    align-items: center;
+}
+
+.products_item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.products_item a {
+    text-decoration: none; 
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 
 .products {
     text-align: center;
-    background-color: crimson;
+    color: blue;
 }
 
 .puma_box {
-    padding-left: 70px;
-    padding-top: 70px;
-    padding-right: 70px;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
     padding-bottom: 30px;
-    background-color: darkorange;
+    background-color: blue;
+    color: white;
 }
 .puma_box a{
     text-decoration: none;
@@ -78,7 +116,6 @@
 @media screen and (max-width: 767px) {
     .middle_container {
         height: 350px;
-        background-color: aquamarine;
         padding-left: 35px;
         padding-top: 60px;
     }
@@ -95,8 +132,7 @@
         padding-top: 40px;
         padding-right: 35px;
         padding-bottom: 40px;
-        height: 800px;
-        background-color: brown;
+        height: auto;
     }
 
     .puma_box {
@@ -104,7 +140,6 @@
         padding-top: 40px;
         padding-right: 35px;
         padding-bottom: 40px;
-        background-color: darkorange;
     }
 
     .get_yours_now {

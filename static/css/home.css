@@ -10,7 +10,7 @@
     background-image: url("/static/images/shoe1.jpeg");
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: center; /* Optional: to center the image */
+    background-position: center; 
 }
 
 
@@ -108,7 +108,9 @@
 .bottom_flex {
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+
+    flex-shrink: 1;
+    gap: 3%;
     justify-content: space-between;
 }
 
@@ -146,9 +148,9 @@
         width: 95%;
     }
     .bottom_flex_container {
-        padding-left: 35px;
-        padding-right: 35px;
-        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 20px;
+        padding-top: 10px;
     }
 
 

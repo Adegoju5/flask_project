@@ -41,7 +41,8 @@ button {
     width: 100%;
     margin-top: 2%;
     background-color: chartreuse;
-    height: 4vh; /* Adjust height as needed */
+    height: 4vh; 
+    cursor: pointer;
 }
 
 .login-container a {

@@ -46,6 +46,7 @@ button{
     height: 10%;
     font-weight: 300;
     font-size: larger;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 780px){

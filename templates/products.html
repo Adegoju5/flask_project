@@ -11,7 +11,7 @@
                    <a  href="{{ url_for('products', argument=product.id) }}"> 
                    <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}">
                    <p> {{product.name}} </p>
-                   <p> {{product.price}} </p>
+                   <p> ${{product.price}} </p>
                    </a>
                 </li>
                 {% endfor %}

@@ -12,7 +12,7 @@ function handleSizeChange() {
             const { filtered_product, similar_products_in_color, similar_products_in_size } = data;
 
             document.getElementById('product-name').innerText = filtered_product.name;
-            document.getElementById('product-price').innerText = `Price: ${filtered_product.price}`;
+            document.getElementById('product-price').innerText = `Price: ${filtered_product.final_price}`;
             document.getElementById('product-image').src = `/static/${filtered_product.image_path}`;
 
             // Update color options

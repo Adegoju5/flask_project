@@ -4,6 +4,7 @@ from models.users_model import User
 from werkzeug.security import check_password_hash
 from db import db
 from sqlalchemy.exc import SQLAlchemyError
+import uuid
 
 @login_required
 def delete_user():

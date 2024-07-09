@@ -13,12 +13,11 @@
 .products_list{
     list-style-type: none;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     margin-left: 0;
     padding: 0;
     flex-wrap: wrap;
     gap:10px;  
-    justify-items: center; 
     width: 100%;
 }
 
@@ -45,6 +44,12 @@
 p{
     width: 100%;
  
+}
+
+span{
+    text-decoration: line-through;
+    margin-right: 7%;
+    color: red;
 }
 
 @media screen and (max-width: 780px) {

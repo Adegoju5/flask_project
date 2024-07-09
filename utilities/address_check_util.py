@@ -1,6 +1,12 @@
 import requests
+import os 
+from dotenv import load_dotenv
 
-GOOGLE_MAPS_API_KEY = 'AIzaSyDoKvEPhVSK2uzVCR_1ItJeuuGU6sA07hs'
+load_dotenv()
+
+GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
+
+
 
 def is_valid_address(address, postal_code, country_name):
     try:
@@ -17,7 +23,6 @@ def is_valid_address(address, postal_code, country_name):
             # Check if the address components are found and match the provided details
             if 'results' in data and len(data['results']) > 0:
                 result = data['results'][0]
-                print(result['formatted_address'])
 
                 # Check if all components (address, postal code, country) match
                 if all(component in result['formatted_address'] for component in [address, postal_code, country_name]):
@@ -33,4 +38,3 @@ def is_valid_address(address, postal_code, country_name):
     except Exception as e:
         print(f"Exception: {e}")
         return False
-print(is_valid_address('Grabenstraße 1', '53639', 'Germany' ))

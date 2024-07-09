@@ -25,7 +25,7 @@
                         {% endfor %}
                     </select>
                 </h3>
-                <h3 id="product-price">Price: {{ filtered_product.price }}</h3>
+                <h3 id="product-price">Net Price: {{ filtered_product.final_price }}</h3>
                 <button id="add-to-cart-button" onclick="location.href='{{ url_for('add_to_cartItem', product_id=filtered_product.id) }}'">Add to Cart</button>
             </div>
         </div>

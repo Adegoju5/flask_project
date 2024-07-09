@@ -1,22 +1,20 @@
 from flask import render_template, session
 from models.products import Product
+import uuid
 
 def cart():
     if 'cart' not in session:
-        total={}
-        total['price'] = 0
-        total['no_of_items'] = 0
-        return render_template('cart_page.html', cart=[], cart_total=total)
+        return render_template('cart_page.html', cart={})
     list_of_products = []
     total = {}
     cart_total_sum = 0
     cart_total_item = 0
     cart = session['cart']
-    for key, item in cart.items():
+    for key, value in cart.items():
         product = Product.query.filter_by(id=key).one()
-        product.quantity = item
-        cart_total_sum += product.price * item
-        cart_total_item += item
+        product.quantity= value
+        cart_total_sum += product.final_price * value
+        cart_total_item += value
         list_of_products.append(product)
     total['price'] = cart_total_sum
     total['no_of_items'] = cart_total_item

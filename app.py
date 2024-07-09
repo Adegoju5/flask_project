@@ -8,6 +8,7 @@ from datetime import timedelta
 
 app = Flask(__name__)
 
+
 app.secret_key = 'Fabregas_3015$'
 
 # Configure the SQLite database
@@ -19,6 +20,7 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'adegojualexander@gmail.com'
 app.config['MAIL_PASSWORD'] = 'rzjnzfwohilzaywh'
+
 
 # Initialize the database
 db.init_app(app)
@@ -49,6 +51,10 @@ from routes.reset_request_route import reset_request
 from routes.reset_token_route import reset_token
 from routes.update_user_profile_route import update_user_profile
 from routes.delete_user_route import delete_user
+from routes.pay_route import pay
+from routes.execute_payment import execute_payment
+from routes.payment_cancel_route import payment_cancel
+
 
 # Register routes
 app.add_url_rule('/home', view_func=home)
@@ -71,12 +77,15 @@ app.add_url_rule('/reset_request', view_func=reset_request, methods=['GET', 'POS
 app.add_url_rule('/reset_token/<token>', view_func=reset_token, methods=['GET', 'POST'])
 app.add_url_rule('/update_user_profile', view_func=update_user_profile, methods=['GET', 'POST'])
 app.add_url_rule('/delete_user', view_func=delete_user, methods=['GET', 'POST'])
+app.add_url_rule('/pay', view_func=pay, methods=['GET', 'POST'])
+app.add_url_rule('/execute_payment/<order_id>', view_func=execute_payment, methods=['GET', 'POST'])
+app.add_url_rule('/payment_cancel/<order_id>', view_func=payment_cancel, methods=['GET', 'POST'])
 
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(user_id)
+    return User.query.get(str(user_id))
 
 if __name__ == '__main__':
     app.run(debug=True)

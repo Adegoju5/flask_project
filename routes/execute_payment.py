@@ -1,8 +1,9 @@
-from flask import request, render_template
+from flask import request, render_template, session
 from models.orders import Order
 from db import db
 from flask_login import login_required
 import paypalrestsdk
+from email_utils import send_manual_order_complete_email
 
 
 
@@ -14,9 +15,15 @@ def execute_payment(order_id):
     payment = paypalrestsdk.Payment.find(payment_id)
 
     if payment.execute({"payer_id": payer_id}):
-        order = Order.query.get_or_404(order_id)
-        order.status = 'Completed'
-        db.session.commit()
-        return render_template('payment_successful.html')
+        try:
+            session['cart']={}
+            order = Order.query.get_or_404(order_id)
+            order.status = 'Completed'
+            db.session.commit()
+            return render_template('payment_successful.html')
+        except Exception as e:
+            send_manual_order_complete_email(payment_id)
+            db.session.rollback()
+            return render_template('payment_successful.html')
     else:
         return render_template('payment_failure.html')

@@ -12,6 +12,8 @@ def cart():
     cart = session['cart']
     for key, value in cart.items():
         product = Product.query.filter_by(id=key).one()
+        if not product:
+            continue
         product.quantity= value
         cart_total_sum += product.final_price * value
         cart_total_item += value

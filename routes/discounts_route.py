@@ -4,7 +4,10 @@ from db import db
 
 
 def discounts():
-    discounted_products = Product.query.filter_by(is_discount=True).all()
+    try:
+        discounted_products = Product.query.filter_by(is_discount=True).all()
+    except:
+        discounted_products=[]
     total = session.get('total', {})
     no_of_cartItems = total.get('no_of_items', 0)
     no_of_cartItems = no_of_cartItems if no_of_cartItems else ''

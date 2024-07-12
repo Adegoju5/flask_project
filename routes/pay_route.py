@@ -1,4 +1,4 @@
-from flask import session, redirect, request, url_for, render_template
+from flask import session, redirect, url_for, render_template, flash
 from flask_login import login_required, current_user
 from db import db
 from models.orders import Order
@@ -15,6 +15,9 @@ load_dotenv()
 def pay():
     cart = session.get('cart', {})
     user = current_user
+    if not user.country or not user.post_code or not user.delivery_address:
+        flash('please fill up your address', 'error')
+        return redirect(url_for('update_user_profile'))
 
     if not cart or not user:
         return "No items in cart or user not logged in"

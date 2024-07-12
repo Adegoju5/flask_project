@@ -7,7 +7,10 @@ def landing_page():
     total = session.get('total', {})
     no_of_cartItems = total.get('no_of_items', 0)
     no_of_cartItems = no_of_cartItems if no_of_cartItems else ''
-    products = Product.query.all()
+    try:
+        products = Product.query.all()
+    except:
+        products=[]
     if len(products) >= 6:
         random_products = random.sample(products, 6)
     else:

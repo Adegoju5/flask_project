@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request
 from models.users_model import User
 from email_utils import send_reset_email
 

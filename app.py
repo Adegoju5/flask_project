@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = 'Fabregas_3015$'
 
 # Configure the SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://debowalealex:Fabregas_3015$@localhost:5432/flask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://u1orkj42025sr9:p666cd4a694e4c169175fa607a106b25968548a6031379e16a393462f1501e067@ccaml3dimis7eh.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d58ka8u4l9nmku'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'

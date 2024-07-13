@@ -1,7 +1,10 @@
-
+import os
 import requests
+from dotenv import load_dotenv
 
-GOOGLE_MAPS_API_KEY = 'AIzaSyDoKvEPhVSK2uzVCR_1ItJeuuGU6sA07hs'
+load_dotenv()
+
+GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 def is_valid_postal_code(postal_code, country_name):
     try:
@@ -33,8 +36,3 @@ def is_valid_postal_code(postal_code, country_name):
     except Exception as e:
         print(f"Exception: {e}")
         return False
-
-
-
-
-print(is_valid_postal_code('04209', 'Germany'))

@@ -1,6 +1,5 @@
-# flask_project/routes/product_add.py
-from flask import render_template, request, redirect, session 
-from db import db  # Import db from db.py
+from flask import render_template, request, redirect
+from db import db  
 from models.products import Product
 from uuid import uuid4
 

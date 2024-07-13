@@ -5,22 +5,25 @@ import logging
 from extensions import login_manager, mail
 from models.users_model import User
 from datetime import timedelta
+import os 
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
+load_dotenv()
 
-app.secret_key = 'Fabregas_3015$'
+app.secret_key = os.environ.get('APP_SECRET_KEY')
 
 # Configure the SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://ufl06dokqq4bgj:p77cf7dc63388dd46f4180251997745cb908a4ea9df211a17aafed795d43f94a3@ccaml3dimis7eh.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d2shv3339neq4q'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('CUSTOM_DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'adegojualexander@gmail.com'
-app.config['MAIL_PASSWORD'] = 'rzjnzfwohilzaywh'
-app.config['MAIL_DEFAULT_SENDER'] = 'adegojualexander@gmail.com'
+app.config['MAIL_USERNAME'] = os.environ.get('DEFAULT_EMAIL_ADDRESS')
+app.config['MAIL_PASSWORD'] = os.environ.get('DEFAULT_EMAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('DEFAULT_EMAIL_ADDRESS')
 
 
 # Initialize the database

@@ -3,10 +3,10 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-
+<div class="cont">
 <div class="middle_container">
     <h1>Limited Time, Maximum Savings</h1>
-    <a href="{{ url_for('discounts') }}" style="text-decoration: none;"><h3 class="order_now">order now</h3></a>
+    <h3 class="order_now"> <a class="order_now_a" href="{{ url_for('discounts') }}" style="text-decoration: none;">order now</a></h3>
 </div>
 <div class="sales_box"> 
     <h1 class="products">Products</h1>
@@ -23,7 +23,7 @@
     <h1>Puma Unisex Running <br> Sneaker</h1>
     <h3>Push your limits with puma running sneakers.</h3>
     <h3>Performance and design taken to the edge.</h3>
-    <a href="{{ url_for('discounts') }}"><h3 class="get_yours_now">Get yours now</h3></a>
+    <h3 class="get_yours_now"><a href="{{ url_for('discounts') }}">Get yours now<a/></h3>
 </div>
 <div class="bottom_flex_container">
     <div class="bottom_flex">
@@ -41,5 +41,6 @@
         </div>
     </div>
 </div>
+<div>
 {% endblock %}
 

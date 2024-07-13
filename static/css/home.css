@@ -1,13 +1,8 @@
-.middle_box {
-    height: 250px;
-    background-color: aquamarine;
-}
-
 .middle_container {
     height: 85vh;
     padding-left: 80px;
     padding-top: 90px;
-    background-image: url("/static/images/shoe1.jpeg");
+    background-image: url("/static/images/frontpage_background_shoe.png");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -24,19 +19,21 @@
 
 .order_now {
     width: 15%;
-    background-color: chartreuse;
+    background-color:chartreuse;
     margin-top: 250px;
     text-align: center;
     border-radius: 10px;
 }
-
+.order_now a{
+    display: block;
+    border-radius: inherit;
+}
 .sales_box {
     padding-left: 70px;
     padding-top: 30px;
     padding-right: 70px;
     padding-bottom: 70px;
     height: auto;
-    background-color: whitesmoke;
 }
 
 .products_list{
@@ -52,7 +49,6 @@
 }
 
 .products_item{
-    background-color:whitesmoke;
     display: block;
     min-height: auto;
     width: 25%;
@@ -95,11 +91,15 @@
     margin-top: 100px;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
+}
+.get_yours_now a{
+    display: block;
+    border-radius: inherit;
 }
 
 .bottom_flex_container {
     min-height: 250px;
-    background-color: rgb(191, 179, 179);
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 20px;
@@ -108,13 +108,11 @@
 .bottom_flex {
     margin: 0;
     display: flex;
-
     flex-shrink: 1;
     gap: 3%;
     justify-content: space-between;
 }
 
-/* Media queries for responsive design */
 @media screen and (max-width: 767px) {
     .middle_container {
         height: 350px;

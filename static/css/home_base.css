@@ -1,5 +1,5 @@
 body{
-    margin: o;
+    background-color: white;
 }
 
 .navbar {
@@ -7,8 +7,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1% 1%;
-    background-color: #333;
-    color: white;
+    background-color: white;
     margin: 0;
 }
 
@@ -23,7 +22,7 @@ body{
 }
 .brand-logo a{
     text-decoration: none;
-    color: white;
+    color:blue;
     border-radius: 10px;
     display: block;
     text-align: center;
@@ -31,6 +30,7 @@ body{
     height: 100%;
     align-content: center;
 }
+
 .brand-logo a:hover{
     background-color: darkolivegreen;  
 }
@@ -50,7 +50,7 @@ body{
 }
 
 .nav-links a {
-    color: white;
+    color: Blue;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -59,12 +59,13 @@ body{
     height: 100%;
     align-content: center;
 }
+
 .brand-text h6{
     margin: 0;
-    font-size:small;
 }
+
 .nav-links a:hover{
-    background-color: darkolivegreen;
+    background-color: darkolivegreen; 
 }
 
 .nav-links a img{
@@ -80,7 +81,6 @@ body{
 
 .mobile-nav {
     display: none;
-    background-color: #333;
     width: 100%;
     transition: top 0.5s ease;
     z-index: 1;

@@ -11,7 +11,8 @@
 .inner_container{
     display: flex;
     justify-content: space-around; 
-    background-color:blanchedalmond;
+    background-color:aliceblue;
+    flex-wrap: wrap;
 }
 
 .inner_container button{

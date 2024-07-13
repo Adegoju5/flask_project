@@ -104,11 +104,13 @@
     margin: 0;
     display: flex;
     flex-shrink: 1;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 0;
 }
-.bottom_flex h3, h6{
 
+.bfc{
+    width:20%;
 }
 
 @media screen and (max-width: 767px) {

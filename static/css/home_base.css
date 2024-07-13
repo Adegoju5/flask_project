@@ -92,17 +92,20 @@ body{
     width: 100%;
     margin: 0px;
     padding: 0px;
+    color: blue;
 }
 
 
 .mobile-nav ul a {
-    color: white;
+    color:blue;
     display: block;
     text-decoration: none;
     font-size: 2.0em;
     text-align: center;
 }
-
+.mobile-nav ul a:hover{
+    background-color:cornflowerblue;
+}
 .mobile-nav ul a img{
     width: 10%;
 }

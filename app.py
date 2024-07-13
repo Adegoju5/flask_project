@@ -7,6 +7,8 @@ from models.users_model import User
 from datetime import timedelta
 import os 
 from dotenv import load_dotenv
+from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import cast, String
 
 app = Flask(__name__)
 
@@ -58,6 +60,7 @@ from routes.delete_user_route import delete_user
 from routes.pay_route import pay
 from routes.execute_payment import execute_payment
 from routes.payment_cancel_route import payment_cancel
+from routes.ordered_items_route import ordered_items
 
 
 # Register routes
@@ -84,12 +87,12 @@ app.add_url_rule('/delete_user', view_func=delete_user, methods=['GET', 'POST'])
 app.add_url_rule('/pay', view_func=pay, methods=['GET', 'POST'])
 app.add_url_rule('/execute_payment/<order_id>', view_func=execute_payment, methods=['GET', 'POST'])
 app.add_url_rule('/payment_cancel/<order_id>', view_func=payment_cancel, methods=['GET', 'POST'])
-
+app.add_url_rule('/ordered_items', view_func=ordered_items, methods=['GET'])
 
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(str(user_id))
+    return db.session.get(User, user_id)
 
 if __name__ == '__main__':
     app.run(debug=True)

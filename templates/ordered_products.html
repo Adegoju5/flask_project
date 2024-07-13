@@ -1,0 +1,25 @@
+{% extends "home_base.html" %}
+{% block title %}products{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+      <div class="container">
+        <div class="products_container">
+            <h2> Ordered Items </h2>
+            <ul class= "products_list"> 
+                {% for order in orders%}
+                <li  class= "products_item">
+                   <a  href="{{ url_for('products', argument=order.product_id) }}"> 
+                   <img src="{{ url_for('static', filename=order.image_path) }}" alt="{{ order.product_name }}">
+                   <p> name:{{order.product_name}} </p>
+                    <p> size:{{order.size}}   </p>
+                    <p> price: ${{order.price}} </p>
+                    <p> order date : {{order.ordered_date}} </p>
+                   </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+      </div>
+
+{% endblock %}

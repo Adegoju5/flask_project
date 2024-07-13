@@ -13,7 +13,7 @@
 <div class="container">
     <h1> Your Profile </h1> 
     <div class="inner_container">
-        <button> ordered items </button>
+        <button onclick="location.href='{{ url_for('ordered_items') }}'"> ordered items </button>
         <button  onclick="location.href='{{ url_for('update_user_profile') }}'"> edit profile </button>
         <button onclick="location.href='{{ url_for('logout') }}'"> logout </button>
         <button onclick="location.href='{{ url_for('delete_user') }}'"> delete user </button>

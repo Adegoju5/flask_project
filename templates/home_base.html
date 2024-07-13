@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home_base.css') }}">
 </head>
 <body>
+    <main>
     <nav class="navbar">
         <div class="brand-logo" ><a class="brand-text" href="{{ url_for('landing_page') }}">Brand</a></div>
         <ul class="nav-links">
@@ -29,6 +30,11 @@
         </ul>
     </div>
     {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <hr>
+        <p>&copy; 2024 Brand. All rights reserved.</p>
+    </footer>
     
     {% block scripts %}{% endblock %}
     <script src="{{ url_for('static', filename='javascripts/mobile_response.js') }}"></script>

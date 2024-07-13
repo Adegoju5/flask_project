@@ -19,7 +19,7 @@ app.secret_key = os.environ.get('APP_SECRET_KEY')
 # Configure the SQLite database
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('CUSTOM_DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60)
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True

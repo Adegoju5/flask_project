@@ -7,7 +7,7 @@ def products(argument):
     total = session.get('total', {})
     no_of_cartItems = total.get('no_of_items', 0)
     no_of_cartItems = no_of_cartItems if no_of_cartItems else ''
-    filter_by_category = Product.query.filter_by(category=argument).all()
+    filter_by_category = db.session.query(Product).filter_by(category=argument).all()
     if filter_by_category:
         filtered_products = filter_by_category
         return render_template( 'products.html', filtered_products=filtered_products, no_of_cartItems= no_of_cartItems)

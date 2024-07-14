@@ -29,14 +29,16 @@ def change_product():
                     'filtered_product': {
                         'id': filtered_product.id,
                         'name': filtered_product.name,
-                        'price': filtered_product.price,
+                        'price': filtered_product.final_price,
                         'image_path': filtered_product.image_path
                     },
                     'similar_products_in_size': similar_products_in_size,
                     'similar_products_in_color': similar_products_in_color
                 }
-                
+                print(response)
                 return jsonify(response)
+                
+            
         
         flash('Missing product details. Please provide valid color, name, and size.', 'error')
         return redirect(request.referrer or '/')
